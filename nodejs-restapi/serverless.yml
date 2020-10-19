@@ -1,0 +1,58 @@
+service: aws-api-starwars
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-2
+  environment:
+    PERSONA_DYNAMODB_TABLE: DynamoDb
+iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+    Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.PERSONA_DYNAMODB_TABLE}"
+
+plugins:
+  - serverless-offline
+
+functions:
+  crearPersona:
+    handler: src/handler.crearPersona
+    events:
+      - http:
+          path: crearPersona
+          method: post
+  obtenerPersonas:
+    handler: src/handler.obtenerPersonas
+    events:
+      - http:
+          path: obtenerPersonas
+          method: get
+  llenarDynamo10x10:
+    handler: src/handler.llenarDynamo10x10
+    events:
+      - http:
+          path: llenarDynamo10x10
+          method: get
+
+
+resources:
+  Resources:
+    DynamoDb:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.PERSONA_DYNAMODB_TABLE}
