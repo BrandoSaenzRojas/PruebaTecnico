@@ -40,7 +40,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:3000/dev/obtenerPersonas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"obtenerPersonas"
+					]
 				}
 			},
 			"response": []
@@ -51,7 +60,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:3000/dev/llenarDynamo10x10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"llenarDynamo10x10"
+					]
 				}
 			},
 			"response": []

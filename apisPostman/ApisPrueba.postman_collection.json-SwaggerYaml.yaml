@@ -38,12 +38,26 @@ paths:
         200:
           description: ''
           headers: {}
-  /:
+  /obtenerPersonas:
     get:
       summary: ObtenerPersona
       tags:
       - Misc
       operationId: ObtenerPersona
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /llenarDynamo10x10:
+    get:
+      summary: LlenarPersona
+      tags:
+      - Misc
+      operationId: LlenarPersona
       deprecated: false
       produces:
       - application/json
