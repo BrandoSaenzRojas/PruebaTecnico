@@ -1,0 +1,108 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: ApisPrueba
+  contact: {}
+host: localhost:3000
+basePath: /dev
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /crearPlaneta:
+    post:
+      summary: Registrar
+      tags:
+      - Misc
+      operationId: Registrar
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/RegistrarRequest'
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /obtenerPlanetas:
+    get:
+      summary: obtener
+      tags:
+      - Misc
+      operationId: obtener
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /llenarDynamo10x10:
+    get:
+      summary: llenar
+      tags:
+      - Misc
+      operationId: llenar
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: ''
+          headers: {}
+definitions:
+  RegistrarRequest:
+    title: RegistrarRequest
+    example:
+      id: 1
+      url: www.peru.com
+      editado: true
+      creado: Si
+      filmes: 123
+      residentes: 123
+      poblacion: 123
+      superficie_agua: 1
+      terreno: 123
+    type: object
+    properties:
+      id:
+        type: string
+      url:
+        type: string
+      editado:
+        type: string
+      creado:
+        type: string
+      filmes:
+        type: string
+      residentes:
+        type: string
+      poblacion:
+        type: string
+      superficie_agua:
+        type: string
+      terreno:
+        type: string
+    required:
+    - id
+    - url
+    - editado
+    - creado
+    - filmes
+    - residentes
+    - poblacion
+    - superficie_agua
+    - terreno
+tags:
+- name: Misc
+  description: ''

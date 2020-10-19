@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "820498a5-ac04-4676-87b6-ba966045d9fc",
+		"name": "ApisPrueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"id\":\"1\",\r\n\"url\":\"www.peru.com\",\r\n\"editado\":\"true\",\r\n\"creado\":\"Si\",\r\n\"filmes\":\"123\",\r\n\"residentes\":\"123\",\r\n\"poblacion\":\"123\",\r\n\"superficie_agua\":\"1\",\r\n\"terreno\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/crearPlaneta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"crearPlaneta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/obtenerPlanetas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"obtenerPlanetas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "llenar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/dev/llenarDynamo10x10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"llenarDynamo10x10"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
