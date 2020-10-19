@@ -5,6 +5,12 @@ info:
   contact: {}
 host: localhost:3000
 basePath: /dev
+securityDefinitions:
+  apikey:
+    type: apiKey
+    description: ''
+    name: apikey
+    in: header
 schemes:
 - http
 consumes:
@@ -12,12 +18,12 @@ consumes:
 produces:
 - application/json
 paths:
-  /crearPlaneta:
+  /crearPersona:
     post:
-      summary: Registrar
+      summary: RegistrarPersona
       tags:
       - Misc
-      operationId: Registrar
+      operationId: RegistrarPersona
       deprecated: false
       produces:
       - application/json
@@ -27,31 +33,17 @@ paths:
         required: true
         description: ''
         schema:
-          $ref: '#/definitions/RegistrarRequest'
+          $ref: '#/definitions/RegistrarPersonaRequest'
       responses:
         200:
           description: ''
           headers: {}
-  /obtenerPlanetas:
+  /:
     get:
-      summary: obtener
+      summary: ObtenerPersona
       tags:
       - Misc
-      operationId: obtener
-      deprecated: false
-      produces:
-      - application/json
-      parameters: []
-      responses:
-        200:
-          description: ''
-          headers: {}
-  /llenarDynamo10x10:
-    get:
-      summary: llenar
-      tags:
-      - Misc
-      operationId: llenar
+      operationId: ObtenerPersona
       deprecated: false
       produces:
       - application/json
@@ -61,22 +53,22 @@ paths:
           description: ''
           headers: {}
 definitions:
-  RegistrarRequest:
-    title: RegistrarRequest
+  RegistrarPersonaRequest:
+    title: RegistrarPersonaRequest
     example:
-      id: 1
       url: www.peru.com
       editado: true
       creado: Si
       filmes: 123
       residentes: 123
-      poblacion: 123
-      superficie_agua: 1
-      terreno: 123
+      nombre: Brando
+      apellidoPaterno: Saenz
+      apellidoMaterno: Rojas
+      edad: 11
+      celular: 123456781
+      distrito: SMP
     type: object
     properties:
-      id:
-        type: string
       url:
         type: string
       editado:
@@ -87,22 +79,32 @@ definitions:
         type: string
       residentes:
         type: string
-      poblacion:
+      nombre:
         type: string
-      superficie_agua:
+      apellidoPaterno:
         type: string
-      terreno:
+      apellidoMaterno:
+        type: string
+      edad:
+        type: string
+      celular:
+        type: string
+      distrito:
         type: string
     required:
-    - id
     - url
     - editado
     - creado
     - filmes
     - residentes
-    - poblacion
-    - superficie_agua
-    - terreno
+    - nombre
+    - apellidoPaterno
+    - apellidoMaterno
+    - edad
+    - celular
+    - distrito
+security:
+- apikey: []
 tags:
 - name: Misc
   description: ''

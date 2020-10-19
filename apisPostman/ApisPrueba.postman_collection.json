@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "820498a5-ac04-4676-87b6-ba966045d9fc",
+		"_postman_id": "5e7b5f53-5f9b-444d-99c9-a4e38fc780c8",
 		"name": "ApisPrueba",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Registrar",
+			"name": "RegistrarPersona",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"id\":\"1\",\r\n\"url\":\"www.peru.com\",\r\n\"editado\":\"true\",\r\n\"creado\":\"Si\",\r\n\"filmes\":\"123\",\r\n\"residentes\":\"123\",\r\n\"poblacion\":\"123\",\r\n\"superficie_agua\":\"1\",\r\n\"terreno\":\"123\"\r\n}",
+					"raw": "{\r\n\"url\":\"www.peru.com\",\r\n\"editado\":\"true\",\r\n\"creado\":\"Si\",\r\n\"filmes\":\"123\",\r\n\"residentes\":\"123\",\r\n\"nombre\":\"Brando\",\r\n\"apellidoPaterno\":\"Saenz\",\r\n\"apellidoMaterno\":\"Rojas\",\r\n\"edad\":\"11\",\r\n\"celular\":\"123456781\",\r\n\"distrito\":\"SMP\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,7 +20,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/dev/crearPlaneta",
+					"raw": "http://localhost:3000/dev/crearPersona",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -28,52 +28,37 @@
 					"port": "3000",
 					"path": [
 						"dev",
-						"crearPlaneta"
+						"crearPersona"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "obtener",
+			"name": "ObtenerPersona",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/dev/obtenerPlanetas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"dev",
-						"obtenerPlanetas"
-					]
+					"raw": ""
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "llenar",
+			"name": "LlenarPersona",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/dev/llenarDynamo10x10",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"dev",
-						"llenarDynamo10x10"
-					]
+					"raw": ""
 				}
 			},
 			"response": []
 		}
 	],
+	"auth": {
+		"type": "apikey"
+	},
 	"protocolProfileBehavior": {}
 }
