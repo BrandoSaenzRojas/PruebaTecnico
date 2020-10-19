@@ -4,16 +4,16 @@ const dynamoDb = new DynamoDB.DocumentClient();
 
 
 async function obtenerPersonas(event) {
-  console.log(event);
+  // console.log(`Success`,event);
   const params = {
     TableName: process.env.PERSONA_DYNAMODB_TABLE
   }
   return dynamoDb.scan(params)
     .promise()
     .then(response =>{
-      // console.log(JSON.stringify("Trama: "+response.Items.data));
+      // Muesta registros
       console.log("Trama: "+JSON.stringify(response.Items));
-
+      // Valida si hay registros y la cantidad
       valor = Object.keys(response.Items).length;
       let validadCantlist = utils.validadCantlist(valor);
       console.log(JSON.stringify("Hay: "+response.Items.length+" registros"));

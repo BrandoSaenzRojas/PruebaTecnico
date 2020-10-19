@@ -2,9 +2,6 @@ const registrar = require('../../../../src/persona/aplication/personaRegistrar')
 
  
 it('Test Fn(getOperation)', async() => {
-    // const result = {
-    //     "message": "erro en dynamoDb"
-    // };
     const event = {
         body: '{\r\n' +
           '"url":"www.peru.com",\r\n' +

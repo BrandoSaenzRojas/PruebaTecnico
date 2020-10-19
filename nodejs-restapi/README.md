@@ -21,3 +21,5 @@
 /dev/obtenerPersonas -> sirve para listar todos los personas
 /dev/llenarDynamo10x10 -> consume el api de StarWars , trasnforma los atributos al castellano y lo inserta en Dynamo, hace este llenado 10 veces (solo usar 1 vez si se quiere usar mas veces cambiar el idInicial en el archivo llenarBaseDeDatos.js)
 
+# Para Testear
+1. Ejecutar el app gracias a jest -> npm run test 

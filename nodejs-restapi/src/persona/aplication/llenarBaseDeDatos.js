@@ -6,7 +6,6 @@ const fetch = require('node-fetch');
 
 async function obtenerPersonas(event) {
   let response ={};
-  // Aqui cambiar idInicial
   for (let idInicial = 1; idInicial <= 10; idInicial++) {
     let persona = await obtenerPersonaApiStarWars(idInicial);
     

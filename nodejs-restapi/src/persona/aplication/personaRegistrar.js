@@ -24,6 +24,7 @@ const dynamoDb = new DynamoDB.DocumentClient()
   }
   let compare = utils.Comparar(persona.creado,persona.editado);
   console.log("Obtener compare: "+compare);
+  //algunas validaciones a parametros de entrada
   let validarLetras = utils.validarLetras(persona.nombre, persona.apellidoPaterno, persona.apellidoMaterno);
   console.log("respuesta :"+validarLetras);
   let validarNumeroEdad = utils.validarNumeroEdad(persona.edad);
