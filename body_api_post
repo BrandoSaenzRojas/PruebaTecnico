@@ -1,0 +1,14 @@
+http://localhost:3000/dev/crearPersona
+{
+"url":"www.peru.com",
+"editado":"true",
+"creado":"Si",
+"filmes":"123",
+"residentes":"123",
+"nombre":"Brando",
+"apellidoPaterno":"Saenz",
+"apellidoMaterno":"Rojas",
+"edad":"11",
+"celular":"123456781",
+"distrito":"SMP"
+}
